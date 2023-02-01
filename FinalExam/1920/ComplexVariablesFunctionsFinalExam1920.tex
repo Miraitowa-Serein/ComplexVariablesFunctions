@@ -1,0 +1,98 @@
+\documentclass[14pt,a4paper,UTF8]{ctexart}
+%\usepackage{ctexcap}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[left=1.9cm, right=1.9cm, top=2.5cm, bottom=2.4cm]{geometry}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+%\usepackage{color}
+\usepackage{diagbox}
+%\usepackage{mathpazo}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.16}
+\usepackage{tikz}
+\linespread{2.2}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{2019-2020复变函数}
+\fancyhead[RE,LO]{南京工程学院}
+\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\newcommand{\onech}[4]{
+	\hspace*{2em}\makebox[92pt][l]{A.\, #1} \hfill
+	\makebox[92pt][l]{B.\, #2} \hfill
+	\makebox[92pt][l]{C.\, #3} \hfill
+	\makebox[92pt][l]{D.\, #4}\\}
+\newcommand{\twoch}[4]{
+	\hspace*{2em}\makebox[92pt][l]{A.\, #1} \hfill\makebox[210pt][l]{B.\, #2}\\
+	\hspace*{2em}\makebox[92pt][l]{C.\, #3} \hfill\makebox[210pt][l]{D.\, #4}\\}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\everymath{\displaystyle}
+\begin{document}
+	\section*{\textbf{南京工程学院 2019-2020复变函数期末试题}}
+	\noindent
+	\textbf{一、 单项选择题：} 本题共 4 小题，每小题 6 分，共 24 分。\\
+	\textbf{1. } 设复数$z$满足$\mathrm{arg}\left(z+2\right)=\frac{\pi}{3}$，$\mathrm{arg}\left(z-2\right)=\frac{5\pi}{6}$，那么$z=$ \\
+	\onech{$-1+\sqrt{3}\mathrm{i}$}{$-\sqrt{3}+\mathrm{i}$}{$-\frac{1}{2}+\frac{\sqrt{3}}{2}\mathrm{i}$}{$-\frac{\sqrt{3}}{2}+\frac{1}{2}\mathrm{i}$}
+	\textbf{2. } 函数$f\left(z\right)=z^2\mathrm{Im}\left(z\right)$在$z=0$处的导数为 \\
+	\onech{$0$}{$1$}{$-1$}{不存在}
+	\textbf{3. } 设$C$是正向圆周$x^2+y^2-2x=0$，则$\oint_C \frac{\sin \frac{\pi}{4}z}{z^2-1}\mathrm{d}z=$ \\
+	\onech{$\frac{\sqrt{2}}{2}\pi\mathrm{i}$}{$\sqrt{2}\pi\mathrm{i}$}{$0$}{$-\frac{\sqrt{2}}{2}\pi\mathrm{i}$}
+	\textbf{4. } 设函数$\frac{\mathrm{e}^{z}}{\cos z}$的泰勒展开式为$\sum\limits_{n=0}^{+\infty}{c_nz^n}$，那么幂级数$\sum\limits_{n=0}^{+\infty}{c_nz^n}$的收敛半径$R=$ \\
+	\onech{$+\infty$}{$1$}{$\frac{\pi}{2}$}{$\pi$}
+	\textbf{5. } $\mathrm{i}^\mathrm{i}$的主值为 \\
+	\onech{$0$}{$1$}{$\mathrm{e}^{\frac{\pi}{2}}$}{$\mathrm{e}^{-\frac{\pi}{2}}$}
+	\textbf{6. } $ z=0 $ 是函数 $ \frac{1-\mathrm{e}^z}{z^4\sin z} $的\\
+	\onech{5级极点}{4级极点}{可去奇点}{3级极点}
+	\\
+	\textbf{二、 填空题：} 本题共 6 小题，每小题 4 分，共 24 分。\\
+	\textbf{1. } $ \left(-1+\mathrm{i}\right)^8 = $ \underline{\hspace*{6em}}。\\
+	\textbf{2. } $ \lim\limits_{z\to1}{\frac{z\overline{z}+3z-\overline{z}-3}{z^2-1}} = $ \underline{\hspace*{6em}}。\\ 
+	\textbf{3. } 设$f\left(z\right)=x^3+y^3+\mathrm{i}x^2y^2$，则$f'\left(-\frac{3}{2}+\frac{3}{2}\mathrm{i}\right) = $ \underline{\hspace*{6em}}。\\
+	\textbf{4. } 设$C$为正向圆周$\left|z-4\right|=1$，则$ \oint_C{\frac{z^2-3z+2}{\left(z-4\right)^2}\mathrm{d}z}= $ \underline{\hspace*{6em}}。\\
+	\textbf{5. } 设$\frac{1}{z^2+1}=\sum\limits_{n=-\infty}^{+\infty}c_nz^n$，$\left|z\right|>1$，则$c_{-6} = $ \underline{\hspace*{6em}}。\\
+	\textbf{6. } 设$ f\left(z\right)=\frac{\mathrm{e}^z}{z^2\left(1-z\right)} $，则$\mathrm{Res}\left[f\left(z\right),0\right] = $ \underline{\hspace*{6em}}。\\
+    \\
+    \textbf{三、计算题：} 本题共 5 小题，每小题 8 分，共 40 分。\\
+	\textbf{1. } 若复数$z$满足方程
+    $$
+	z+\left|\overline{z}\right|=2+\mathrm{i}
+	$$
+	求复数$z$
+	\\[20pt]
+	\textbf{2. } 设函数
+    $$
+    f\left(z\right)=z^2\cdot\overline{z}
+    $$
+    试判断$f\left(z\right)$在何处可导，何处解析，并计算可导点处的导数
+	\\[20pt]
+    \textbf{3. } 将函数
+    $$
+    f\left(z\right)=\frac{z}{\left(z+1\right)\left(z+2\right)}
+    $$
+    在$z=1$处展开成泰勒级数，并指出其收敛区域
+	\\[20pt]
+	\textbf{4. } 设
+    $$
+    f\left(z\right)=\frac{1}{z^2\left(z-\mathrm{i}\right)^3}
+    $$
+    试在$\left| z-\mathrm{i} \right|>1$内将$f\left(z\right)$展开成洛朗级数
+	\\[20pt]
+	\textbf{5. } 设$C$为正向圆周$\left|z\right|=4$，计算积分
+    $$
+    \oint_C{\frac{\mathrm{e}^z}{\left(z-1\right)\left(z-2\right)^2}\mathrm{d}z}
+    $$
+	\\
+    \textbf{四、应用题：} 本题共 1 小题，每小题 12 分，共 12 分。\\
+    \textbf{1. } 已知函数
+	$$
+	v\left(x,y\right)=\arctan\frac{y}{x},x>0
+	$$
+	解析，求解析函数$f\left(z\right)=u+\mathrm{i}v$
+ 
+\end{document}           

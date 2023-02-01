@@ -1,0 +1,101 @@
+\documentclass[14pt,a4paper,UTF8]{ctexart}
+%\usepackage{ctexcap}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[left=1.9cm, right=1.9cm, top=2.5cm, bottom=2.4cm]{geometry}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+%\usepackage{color}
+\usepackage{diagbox}
+%\usepackage{mathpazo}
+%\usepackage{pgfplots}
+%\pgfplotsset{compat=1.16}
+\usepackage{tikz}
+\linespread{2.2}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{2018-2019复变函数}
+\fancyhead[RE,LO]{南京工程学院}
+\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\newcommand{\onech}[4]{
+	\hspace*{2em}\makebox[92pt][l]{A.\, #1} \hfill
+	\makebox[92pt][l]{B.\, #2} \hfill
+	\makebox[92pt][l]{C.\, #3} \hfill
+	\makebox[92pt][l]{D.\, #4}\\}
+\newcommand{\twoch}[4]{
+	\hspace*{2em}\makebox[92pt][l]{A.\, #1} \hfill\makebox[210pt][l]{B.\, #2}\\
+	\hspace*{2em}\makebox[92pt][l]{C.\, #3} \hfill\makebox[210pt][l]{D.\, #4}\\}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\everymath{\displaystyle}
+\begin{document}
+	\section*{\textbf{南京工程学院 2018-2019复变函数期末试题}}
+	\noindent
+	\textbf{一、 单项选择题：} 本题共 4 小题，每小题 6 分，共 24 分。\\
+	\textbf{1. } 若$ f\left(z^z+1\right)=\left| z \right| $，则$ f\left(1\right)= $ \\
+	\onech{$0$}{$1$}{$\sqrt{2}$}{$2$}
+	\textbf{2. } 方程$ \left| z-2\text{i} \right|=\left| z+2 \right| $所表示的曲线为 \\
+	\onech{圆}{双曲线}{抛物线}{直线}
+	\textbf{3. } 若$f\left(z\right)=\overline{z}$，则$f\left(z\right)$ \\
+	\onech{处处解析}{处处不可导}{仅在原点可导}{仅在虚轴上可导}
+	\textbf{4. } 设$C$是正向椭圆$x^2+y^2=1$，则$\oint_C{\frac{1}{z-3}\text{d}z}=$ \\
+	\onech{$-2\pi\mathrm{i}$}{$2\pi$}{$0$}{$1$}
+	\textbf{5. } 幂级数$\sum\limits_{n=0}^{\infty}{\frac{1}{2^n}z^n}$的收敛半径为 \\
+	\onech{$1$}{$\sqrt{2}$}{$\frac{1}{2}$}{$2$}
+	\textbf{6. } $ z=0 $ 是函数 $ \frac{\sin z}{z} $的\\
+	\onech{本性奇点}{可去奇点}{一级极点}{二级极点}
+	\\
+	\textbf{二、 填空题：} 本题共 6 小题，每小题 4 分，共 24 分。\\
+	\textbf{1. } $ \mathrm{Im}\left[\left(1+\mathrm{i}\right)^8+\left(1-\mathrm{i}\right)^8\right]= $ \underline{\hspace*{6em}}。\\
+	\textbf{2. } $ \sin\left(3\pi+\mathrm{i}\right)= $ \underline{\hspace*{6em}}。\\
+	\textbf{3. } 若$ f\left(z\right)=z\ln z $，则$f'\left(\mathrm{i}\right)= $ \underline{\hspace*{6em}}。\\
+	\textbf{4. } $ \oint\limits_{\left| z \right|=1}{\frac{1}{z\left(z-3\right)}\mathrm{d}z}= $ \underline{\hspace*{6em}}。\\
+	\textbf{5. } $ f\left(z\right)=\frac{1}{\left(z-1\right)\left(z+2\right)} $在$z=\mathrm{i}$处的泰勒级数的收敛半径为 \underline{\hspace*{6em}}。\\
+	\textbf{6. } 设$ f\left(z\right)=\frac{z\mathrm{e}^z}{z^2-1} $，则$\mathrm{Res}\left[f\left(z\right),-1\right]= $ \underline{\hspace*{6em}}。\\
+    \\
+    \textbf{三、计算题：} 本题共 5 小题，每小题 8 分，共 40 分。\\
+	\textbf{1. } 计算
+    $$
+    \mathrm{Ln}\left(3-4\mathrm{i}\right)
+    $$
+    并指出其主值
+	\\[20pt]
+	\textbf{2. } 设函数
+    $$
+    f\left(z\right)=\left(x^2-y^2+ax+by\right)+\mathrm{i}\left(cxy+3x+2y\right)
+    $$
+    则当常数$a$、$b$、$c$取何值时，$f\left(z\right)$在复平面内处处解析，并求$f'\left(z\right)$
+	\\[20pt]
+    \textbf{3. } 求函数
+    $$
+    f\left(z\right)=\frac{z}{\left(z-1\right)\left(z-2\right)}
+    $$
+    在$z=0$处的泰勒展开式
+	\\[20pt]
+	\textbf{4. } 将
+    $$
+    f\left(z\right)=\frac{1}{z^2\left(z-3\right)}
+    $$
+    在$\left| z-3 \right|>1$内展开成洛朗级数
+	\\[20pt]
+	\textbf{5. } 计算积分：
+    $$
+    \oint\limits_{\left| z \right|=2}{\frac{2z+1}{z^2+z}\mathrm{d}z}
+    $$
+	\\
+    \textbf{四、应用题：} 本题共 1 小题，每小题 12 分，共 12 分。\\
+    \textbf{1. } 已知解析函数
+    $$
+    f\left(z\right)=u\left(x,y\right)+\mathrm{i}v\left(x,y\right)
+    $$
+    的实部与虚部之和为
+    $$
+    u+v=x^3-y^3+3x^2y-3xy^2-2x-2y
+    $$
+    求$f\left(z\right)$
+\end{document}

@@ -1,0 +1,1041 @@
+\documentclass[12pt, a4paper, twoside]{ctexbook}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, hyperref, mathrsfs, geometry, booktabs, makecell}
+\hypersetup{colorlinks=true, linkcolor=black}
+\geometry{left=2.0cm, top=2.0cm, bottom=2.0cm, right=2.0cm}
+
+\title{{\Huge{\textbf{复变函数笔记}}}}
+\author{南京工程学院\\Serein}
+\date{\today}
+\linespread{1.5}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{example}[theorem]{例}
+\newtheorem{proposition}[theorem]{命题}
+\everymath{\displaystyle}
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\newpage
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\chapter{复数与复变函数}
+\newpage
+
+\section{复数的概念及基本知识}
+\subsubsection*{概念}
+\textbf{复数}：$z=x+\mathrm{i}y$
+
+\textbf{实部}：$x=\mathrm{Re}\left(z\right)$
+
+\textbf{虚部}：$y=\mathrm{Im}\left(z\right)$
+
+\textbf{注意}：两个复数相等当且仅当他们实部与虚部分别相等；两个复数只要不同时为实数就不能比较大小
+
+\subsubsection*{代数运算}
+\textbf{交换律}：$z_1+z_2=z_2+z_1$，$z_1z_2=z_2z_1$
+
+\textbf{结合律}：$\left(z_1+z_2\right)+z_3=z_1+\left(z_2+z_3\right)=z_1+z_2+z_3$，$\left(z_1z_2\right)z_3=z_1\left(z_2z_3\right)=z_1z_2z_3$
+
+\textbf{分配律}：$\left(z_1+z_2\right)z_3=z_1z_3+z_2z_3$
+
+\subsubsection*{性质}
+$$
+\overline{\overline{z}}=z,\overline{z_1\pm z_2}=\overline{z_1}\pm\overline{z_2},\overline{z_1z_2}=\overline{z_1}\cdot \overline{z_2},\overline{\left(\frac{z_1}{z_2}\right)}=\frac{\overline{z_1}}{\overline{z_2}}
+$$
+$$
+z\overline{z}=\left[\mathrm{Re}\left(z\right)\right]^2+\left[\mathrm{Im}\left(z\right)\right]^2
+$$
+$$
+\mathrm{Re}\left(z\right)=\frac{z+\overline{z}}{2},\mathrm{Im}\left(z\right)=\frac{z-\overline{z}}{2\mathrm{i}}
+$$
+
+\subsubsection*{复平面}
+
+\textbf{模}
+$$
+r=\left| z \right|=\sqrt{x^2+y^2}\geqslant 0
+$$
+$$
+\left| x \right|\leqslant \left| z \right|,\left| y \right|\leqslant \left| z \right|,\left| z \right|\leqslant \left| x \right|+\left| y \right|
+$$
+$$
+\left| z \right|=\left| \overline{z} \right|,z\overline{z}=x^2+y^2=\left| z \right|^2=\left| z^2 \right|
+$$
+$$
+\left| z_1+z_2 \right|\leqslant \left| z_1 \right|+\left| z_2 \right|,\left| z_1-z_2 \right|\geqslant \left| \left| z_1 \right|-\left| z_2 \right| \right|
+$$
+
+\textbf{辐角}
+$$
+\tan \left(\mathrm{Arg}z\right)=\frac{y}{x},x\ne 0
+$$
+$$
+\mathrm{Arg}z=\theta_0+2k\pi\left(k=0,\pm 1,\pm 2,\cdots\right)
+$$
+在$\left(-\pi,\pi\right]$内的辐角称为\textbf{辐角$\mathrm{Arg}z$的主值}，记作$\mathrm{arg}\left(z\right)$，且其唯一，我们有
+$$
+\mathrm{Arg}z=\mathrm{arg}z+2k\pi\left(k=0,\pm 1,\pm 2,\cdots\right)
+$$
+$$
+\text{arg}z=\left\{ \begin{array}{l}
+	\arctan \frac{y}{x},x>0,\left(\text{\uppercase\expandafter{\romannumeral1},\uppercase\expandafter{\romannumeral4}}\right)\\
+	\arctan \frac{y}{x}+\pi ,x<0,y\geqslant 0,\left(\text{\uppercase\expandafter{\romannumeral2}}\right)\\
+	\arctan \frac{y}{x}-\pi ,x<0,y>0,\left(\text{\uppercase\expandafter{\romannumeral3}}\right)\\
+	\frac{\pi}{2},x=0,y>0\\
+	-\frac{\pi}{2},x=0,y<0\\
+\end{array} \right. 
+$$
+
+\textbf{三角表示}
+$$
+z=r\left(\cos \theta + \mathrm{i} \sin \theta \right),\left| z \right|=r,\mathrm{arg}z=\theta
+$$
+
+\textbf{指数表示}
+$$
+z=r\mathrm{e}^{\mathrm{i}\theta}
+$$
+
+\textbf{性质}
+$$
+\left| z_1z_2 \right|=\left| z_1 \right|\left| z_2 \right|,\text{Arg}\left( z_1z_2 \right) =\text{Arg}z_1+\text{Arg}z_2
+$$
+$$
+\left| \frac{z_1}{z_2} \right|=\frac{\left| z_1 \right|}{\left| z_2 \right|},\text{Arg}\left( \frac{z_1}{z_2} \right) =\text{Arg}z_1-\text{Arg}z_2
+$$
+$$
+z_1z_2=r_1r_2\text{e}^{\text{i}\left( \theta _1+\theta _2 \right)},\frac{z_1}{z_2}=\frac{r_1}{r_2}\text{e}^{\text{i}\left( \theta _1-\theta _2 \right)}
+$$
+$$
+z^mz^n=z^{m+n},\left( z^m \right) ^n=z^{mn},\left( z_1z_2 \right) ^n=z_{1}^{n}z_{2}^{n}
+$$
+$$
+\text{i}^1=\text{i,i}^2=-1,\text{i}^3=-\text{i,i}^4=1
+$$
+$$
+z^n=r^n\left( \cos n\theta +\text{i}\sin n\theta \right) 
+$$
+$$
+\left( \cos \theta +\text{i}\sin \theta \right) ^n=\cos n\theta +\text{i}\sin n\theta 
+$$
+$$
+\left( r\text{e}^{\text{i}\theta} \right) ^n=r^n\text{e}^{\text{i}n\theta}
+$$
+$$
+\sqrt[n]{z}=\sqrt[n]{r}\left( \cos \frac{\theta +2k\pi}{n}+\text{i}\sin \frac{\theta +2k\pi}{n} \right) 
+$$
+$$
+\sqrt[n]{r\text{e}^{\text{i}\theta}}=\sqrt[n]{r}\text{e}^{\text{i}\frac{\theta +2k\pi}{n}}
+$$
+\begin{example}
+	在复数范围内求解\\
+	\hspace*{2em}(1)$z^2+2z+3=0$\\
+	\hspace*{2em}(2)$z^3+8=0$\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}(1)
+	$$
+	z_{1,2}=\frac{-2\pm \sqrt{4-12}}{2}=\frac{-2\pm \sqrt{-8}}{2}=\frac{-2\pm 2\sqrt{2}\mathrm{i}}{2}=-1\pm \sqrt{2}\mathrm{i}
+	$$
+	\newpage
+	(2)由于$-8=8\left(\cos \pi+\mathrm{i}\sin \pi\right)$
+	$$
+	z=\sqrt[3]{-8}=2\left(\cos \frac{\pi +2k\pi}{3}+\mathrm{i}\sin \frac{\pi+2k\pi}{3}\right),k=0,1,2
+	$$
+	$$
+	z_1=2\left(\cos\frac{\pi}{3}+\mathrm{i}\sin\frac{\pi}{3}\right)=1+\sqrt{3}\mathrm{i}
+	$$
+	$$
+	z_2=2\left(\cos\pi+\mathrm{i}\sin\pi\right)=-2
+	$$
+	$$
+	z_3=2\left(\cos\frac{5\pi}{3}+\mathrm{i}\sin\frac{5\pi}{3}\right)=1-\sqrt{3}\mathrm{i}
+	$$
+\end{example}
+
+\section{复变函数}
+\begin{theorem}
+	函数$f\left(z\right)=u\left(x,y\right)+\mathrm{i}v\left(x,y\right)$在点$z_0=x_0+\mathrm{i}y_0$连续的充要条件是$u=u\left(x,y\right)$和$v=v\left(x,y\right)$在点$\left(x_0,y_0\right)$连续
+\end{theorem}
+\begin{example}
+	$$
+	\lim_{z\to1}\frac{z\overline{z}+z-\overline{z}-1}{z^2-1}=\lim_{z\to 1}\frac{\left(z-1\right)\left(\overline{z}+1\right)}{\left(z+1\right)\left(z-1\right)}=\lim_{z\to 1}\frac{\overline{z}+1}{z+1}=1
+	$$
+\end{example}
+\begin{example}
+	$$
+	\lim_{z\to -1}\frac{\left|z^2\right|+2\mathrm{Re}\left(z\right)+1}{z^2-1}=\lim_{z\to -1}\frac{z\overline{z}+z+\overline{z}+1}{z^2-1}=\lim_{z\to -1}\frac{\left(z+1\right)\left(\overline{z}+1\right)}{\left(z+1\right)\left(z-1\right)}=\lim_{z\to -1}\frac{\overline{z}+1}{z-1}=0
+	$$
+\end{example}
+\begin{example}
+	函数$\omega=3z$和$\omega=z^3$分别将$z$平面上的区域
+	$$
+	\left\{ \begin{array}{l}
+		\left| z \right|<1\\
+		\left| \mathrm{arg}z \right|<\frac{\pi}{6}\\
+	\end{array} \right. 
+	$$
+	\hspace*{2em}映射成$\omega$平面上的何种区域\\
+	\hspace*{1em}\textbf{解}
+	\hspace*{2em}
+	$$
+	\omega=3z\Rightarrow\left\{ \begin{array}{l}
+		\left| \omega \right|<3\\
+		\left| \mathrm{arg}z \right|<\frac{\pi}{6}\\
+	\end{array} \right. 
+	$$
+	$$
+	\omega=z^3 \Rightarrow\left\{ \begin{array}{l}
+		\left| \omega \right|<1^3=1\\
+		\left| \mathrm{arg}z \right|<\frac{\pi}{6}\times 3=\frac{\pi}{2}\\
+	\end{array} \right. 
+	$$
+\end{example}
+
+\chapter{解析函数}
+\newpage
+\section{解析函数的概念}
+\begin{theorem}
+	如果函数$f\left(z\right)$在$z_0$及$z_0$的某个邻域内可导，则\textbf{$f\left(z\right)$在$z_0$解析}；如果$f\left(z\right)$在区域$D$内每一点都解析，则\textbf{$f\left(z\right)$在$D$内解析}，$f\left(z\right)$为$D$内的\textbf{解析函数}
+\end{theorem}
+\section{函数解析的充要条件}
+\begin{theorem}
+	设函数$f\left(z\right)=u\left(x,y\right)+\mathrm{i}v\left(x,y\right)$定义在$D$内，$w=f\left(z\right)=u+\mathrm{i}v$在$D$内一点$z=x+\mathrm{i}y$可导的充要条件是$u\left(x,y\right)$与$v\left(x,y\right)$在点$\left(x,y\right)$可微，并且在该点满足\textbf{柯西-黎曼方程（C-R方程）}
+	$$
+	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}
+	$$
+\end{theorem}
+\begin{theorem}
+	函数$f\left(z\right)=u\left(x,y\right)+\mathrm{i}v\left(x,y\right)$在区域$D$内解析的充要条件是$u\left(x,y\right)$与$v\left(x,y\right)$在$D$内可微，并且满足C-R方程
+\end{theorem}
+\textbf{提示：}求函数$f\left(z\right)$的导数，有两种情况：\\
+(1)若表达式为关于$z$的式子，则直接求导即可\\
+(2)若表达式为关于$x$与$y$的式子，则
+$$
+f'\left(z\right)=\frac{\partial u}{\partial x}+\mathrm{i}\frac{\partial v}{\partial x}=\frac{1}{\mathrm{i}}\frac{\partial u}{\partial y}+\frac{\partial v}{\partial y}
+$$
+
+\textbf{强调：}$f\left(z\right)=\overline{z}$在复平面内处处不可导，处处不解析
+\section{初等函数}
+\textbf{指数函数}
+$$
+\exp\left(z\right)=\mathrm{e}^z=\mathrm{e}^x\left(\cos y+\mathrm{i}\sin y\right),T=2k\pi\mathrm{i}
+$$
+$$
+\mathrm{Arg}\left(\mathrm{e}^z\right)=y+2k\pi
+$$
+$$
+\mathrm{e}^{z_1}\cdot\mathrm{e}^{z_2}=\mathrm{e}^{z_1+z_2},\left(\mathrm{e}^z\right)'=\mathrm{e}^z
+$$
+
+\textbf{对数函数}
+$$
+w=u+\mathrm{i}v=\mathrm{Ln}z=\ln \left| z \right| +\mathrm{iArg}z
+$$
+$\mathrm{Ln}z$的主值为
+$$
+\ln z = \ln \left|z\right|+\mathrm{iarg}z
+$$
+$$
+\mathrm{Ln}z=\ln z +2k\pi\mathrm{i}
+$$
+需要注意以下几点
+$$
+\mathrm{Ln}\left(z_1z_2\right)=\mathrm{Ln}z_1+\mathrm{Ln}z_2,\mathrm{Ln}\left(\frac{z_1}{z_2}\right)=\mathrm{Ln}z_1-\mathrm{Ln}z_2
+$$
+$$
+\mathrm{Ln}z+\mathrm{Ln}z\neq 2\mathrm{Ln}z,\mathrm{Ln}z^n\neq n\mathrm{Ln}z,\mathrm{Ln}\sqrt[n]{z}\neq \frac{1}{n}\mathrm{Ln}z
+$$
+$$
+\left(\ln z\right)'=\frac{1}{z},\left(\mathrm{Ln}z\right)'=\frac{1}{z}
+$$
+$\ln z$以及$\mathrm{Ln}z$各分支在除原点和负实轴的复平面内解析
+
+\textbf{幂函数}
+$$
+w=z^a=\mathrm{e}^{a\mathrm{Ln}z}=\mathrm{e}^{a\ln z}\mathrm{e}^{2k\pi a \mathrm{i}}
+$$
+当$a$为整数时
+$$
+w=\mathrm{e}^{a\ln z}
+$$
+
+\textbf{三角函数}
+$$
+\sin z=\frac{\mathrm{e}^{\mathrm{i}z}-\mathrm{e}^{-\mathrm{i}z}}{2\mathrm{i}}
+$$
+$$
+\cos z=\frac{\mathrm{e}^{\mathrm{i}z}+\mathrm{e}^{-\mathrm{i}z}}{2}
+$$
+$$
+\mathrm{e}^{\mathrm{i}z}=\cos z+\mathrm{i}\sin z
+$$
+(1)$\sin z$与$\cos z$，$T=2\pi$\\
+(2)$\sin z$为奇函数，$\cos z$为偶函数\\
+(3)$\sin z$与$\cos z$，对应的实三角函数恒等式、三角函数诱导公式等仍然成立\\
+(4)$\sin z=0\Rightarrow z=\frac{\pi}{2}+k\pi$，$\cos z=0\Rightarrow z=k\pi$，$k=0,\pm 1,\pm 2,\cdots$\\
+(5)$\sin z$与$\cos z$在复平面内处处可微，且$\left(\sin z\right)'=\cos z$，$\left(\cos z\right)'=-\sin z$\\
+(6)$\left|\sin z\right|$与$\left|\cos z\right|$无界
+\begin{example}
+	指出函数
+	$$
+	\omega = \frac{1}{z^2+2z+5}
+	$$
+	\hspace*{2em}的解析性区域，并在该区域内求出其导数\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}当$z^2+2z+5=0$时
+	$$
+	z_{1,2}=\frac{-2\pm \sqrt{20-4}\mathrm{i}}{2}=-1\pm2\mathrm{i}
+	$$
+	\hspace*{2em}因此
+	$$
+	\omega = \frac{1}{z^2+2z+5}
+	$$
+	\hspace*{2em}解析性区域为除$z=-1\pm2\mathrm{i}$的复平面
+	$$
+	\omega ' = -\frac{1}{\left(z^2+2z+5\right)^2}\left(2z+2\right)= -\frac{2z+2}{\left(z^2+2z+5\right)^2},z\neq -1\pm2\mathrm{i}
+	$$
+\end{example}
+\begin{example}
+	求函数
+	$$
+	f\left(z\right)=x^3-y^3+2x^2y^2\mathrm{i}
+	$$
+	\hspace*{2em}与
+	$$
+	f\left(z\right)=\left|z^2\right|z
+	$$
+	\hspace*{2em}在何处可导，以及其解析性区域\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}(1)
+	$$
+	f\left(z\right)=x^3-y^3+2x^2y^2\mathrm{i},u\left(x,y\right)=x^3-y^3,v\left(x,y\right)=2x^2y^2
+	$$
+	$$
+	\frac{\partial u}{\partial x}=3x^2,\frac{\partial u}{\partial y}=-3y^2
+	$$
+	$$
+	\frac{\partial v}{\partial x}=4xy^2,\frac{\partial v}{\partial y}=4x^2y
+	$$
+	\hspace*{2em}令
+	$$
+	\left\{ \begin{array}{l}
+		3x^2=4x^2y\\
+		-3y^2=-4xy^2\\
+	\end{array} \right. 
+	$$
+	\hspace*{2em}得
+	$$
+	\left\{ \begin{array}{l}
+		x_1=0\\
+		y_1=0\\
+	\end{array} \right. 
+	or
+	\left\{ \begin{array}{l}
+		x_2=\frac{3}{4}\\
+		y_2=\frac{3}{4}\\
+	\end{array} \right. 
+	$$
+	\hspace*{2em}因此
+	$$
+	f\left(z\right)=x^3-y^3+2x^2y^2\mathrm{i}
+	$$
+	\hspace*{2em}在$z=0$与$z=\frac{3}{4}+\frac{3}{4}\mathrm{i}$处可导，在复平面内处处不解析\\
+	\hspace*{2em}(2)
+	令$z=x+y\mathrm{i}$，则$\left|z^2\right|=\sqrt{\left(x^2-y^2\right)^2+4x^2y^2}=x^2+y^2$
+	因此
+	$$
+	f\left(z\right)=\left(x^2+y^2\right)\left(x+\mathrm{i}y\right)=x^3+x^2y\mathrm{i}+xy^2+y^3\mathrm{i}=x^3+xy^2+\left(x^2y+y^3\right)\mathrm{i}
+	$$
+	$$
+	u\left(x,y\right)=x^3+xy^2,v\left(x,y\right)=x^2y+y^3
+	$$
+	\hspace*{2em}因此
+	$$
+	\frac{\partial u}{\partial x}=3x^2+y^2,\frac{\partial u}{\partial y}=2xy
+	$$
+	$$
+	\frac{\partial v}{\partial x}=2xy,\frac{\partial v}{\partial y}=x^2+3y^2
+	$$
+	\hspace*{2em}要使
+	$$
+	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}
+	$$
+	\hspace*{2em}成立，则当且仅当$x=y=0$时成立\\
+	\hspace*{2em}因此$f\left(z\right)$在$z=0$处可导，在复平面内处处不解析
+\end{example}
+
+\chapter{复变函数的积分}
+\newpage
+\section{复变函数积分的性质及计算方法}
+计算复变函数积分类似于实数域内第二类曲线积分，当被积函数内出现积分路径，可以将积分路径带入计算
+\begin{example}
+	设$C$是从$2\to0$的上半圆周：$\left|z-1\right|=1$，求
+	$$
+	\int_C\left(1+\left|z-1\right|\right)\mathrm{d}z
+	$$
+	\hspace*{1em}\textbf{解}
+    \begin{eqnarray}
+        \int_C\left(1+\left|z-1\right|\right)\mathrm{d}z&=&\int_C\mathrm{d}z+\int_C\left|z-1\right|\mathrm{d}z \nonumber      \\
+        ~&=&\int_C\mathrm{d}z+\int_C\mathrm{d}z  \nonumber    \\
+        ~&=&2\int_C\mathrm{d}z \nonumber		\\
+		~&=&2\int_2^0\mathrm{d}\left(x+\mathrm{i}y\right) \nonumber  \\
+		~&=&-4 \nonumber
+    \end{eqnarray}
+\end{example}
+
+\begin{example}
+	计算$\oint_C z\mathrm{d}z$，其中$C$为从原点到$3+4\mathrm{i}$的直线段\\
+	\hspace*{1em}\textbf{解}\\
+    \hspace*{2em}得参数方程
+	$$
+	\left\{ \begin{array}{l}
+		x=x\\
+		y=\frac{4}{3}x\\
+	\end{array},x:0\rightarrow 3 \right. 
+	$$
+	$$
+	z=x+\mathrm{i}y=\left( x+\frac{4}{3}x\right) \mathrm{i}
+	$$
+	\hspace*{2em}则
+    \begin{eqnarray}
+        \oint_C z\mathrm{d}z&=&\int_0^3\left(x+\frac{4}{3}x\mathrm{i}\right)\mathrm{d}\left(x+\frac{4}{3}x\mathrm{i}\right) \nonumber      \\
+        ~&=&\int_0^3\left(1+\frac{4}{3}\mathrm{i}\right)^2x\mathrm{d}x \nonumber    \\
+        ~&=&\frac{9}{2}\times \left(1+\frac{4}{3}\mathrm{i}\right)^2 \nonumber		\\
+		~&=&-\frac{7}{2}+12\mathrm{i} \nonumber
+    \end{eqnarray}
+\end{example}
+\textbf{重点}\\
+对包含$z_0$的任意一条正向简单闭曲线$C$，有
+$$
+\oint_C{\frac{\text{d}z}{\left( z-z_0 \right) ^{n+1}}}=\left\{ \begin{array}{l}
+	2\pi \text{i,}n=0\\
+	0,n\neq 0\\
+\end{array} \right. 
+$$
+\section{复变函数积分的基本定理}
+\textbf{柯西-古萨基本定理}\\
+如果函数$f\left(z\right)$在单连通区域$D$内处处解析，则函数沿$D$内的任意一条简单闭曲线$C$的积分值为零，即
+$$
+\oint_C f\left(z\right)\mathrm{d}z=0
+$$
+
+\textbf{原函数与不定积分}\\
+与实数域计算方法类似，类似于牛顿-莱布尼茨公式
+\begin{example}
+	$$
+	\int_{-\pi\mathrm{i}}^{3\pi\mathrm{i}}{\mathrm{e}^{2z}}\mathrm{d}z=\left. \frac{1}{2}\mathrm{e}^{2z} \right|_{-\pi \mathrm{i}}^{3\pi \mathrm{i}}=\frac{1}{2}\left( \mathrm{e}^{6\pi\mathrm{i}}-\mathrm{e}^{-2\pi\mathrm{i}}\right)=\frac{1-1}{2}=0
+	$$
+\end{example}
+
+\textbf{复合闭路定理}
+$$
+\oint_C{f\left( z \right) \text{d}z}=\oint_{C_1}{f\left( z \right) \text{d}z}
+$$
+$$
+\oint_C{f\left( z \right) \text{d}z}=\sum_{k=1}^n{\oint_{C_k}{f\left( z \right) \text{d}z}}
+$$
+
+\begin{example}
+	计算
+	$$
+	\oint_{\Gamma}{\frac{1}{z^2-z}\mathrm{d}z}
+	$$
+	\hspace*{2em}其中$\Gamma$为包含圆周$\left|z\right|=1$在内的任意一条正向简单闭曲线\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}以$0$与$1$为中心，在$\Gamma$内作正向圆周$C_1$与$C_2$，且两者互不相交，互不包含，则
+	\begin{eqnarray}
+        \oint_{\Gamma}{\frac{1}{z^2-z}\mathrm{d}z}&=&\oint_{C_1}{\frac{1}{z^2-z}\mathrm{d}z}+\oint_{C_2}{\frac{1}{z^2-z}\mathrm{d}z} \nonumber      \\
+        ~&=&\oint_{C_1}{\left(\frac{1}{z-1}-\frac{1}{z}\right)\mathrm{d}z}+\oint_{C_2}{\left(\frac{1}{z-1}-\frac{1}{z}\right)\mathrm{d}z} \nonumber    \\
+        ~&=&0-2\pi\mathrm{i}+2\pi\mathrm{i}-0 \nonumber	  \\
+		~&=&0 \nonumber
+    \end{eqnarray}
+\end{example}
+
+
+\textbf{复变函数积分的基本公式}
+\begin{theorem}
+	如果函数$f\left(z\right)$在区域$D$内处处解析，$C$为$D$内的任何一条正向简单闭曲线，它的内部完全含于$D$，$z_0$为$C$内的任意一点，则
+	$$
+	\oint_C{\frac{f\left( z \right)}{z-z_0}\mathrm{d}z=}2\pi \mathrm{i}f\left( z_0 \right) 
+	$$
+\end{theorem}
+\newpage
+\begin{example}
+	计算
+	$$
+	\frac{1}{2\pi\mathrm{i}}\oint_{\left|z\right|=4}{\frac{\sin 2z}{z}\mathrm{d}z}
+	$$
+	\hspace*{2em}沿圆周正向\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}由于$\sin 2z$在$\left|z\right|=4$内解析，则
+	$$
+	\frac{1}{2\pi\mathrm{i}}\oint_{\left|z\right|=4}{\frac{\sin 2z}{z}\mathrm{d}z}=\left.\sin 2z \right|_{z=0}=0
+	$$
+\end{example}
+\begin{example}
+	计算
+	$$
+	\oint_{\left|z+2\right|=1}{\frac{z}{z^2-4}}\mathrm{d}z
+	$$
+	\hspace*{2em}沿圆周正向\\
+	\hspace*{1em}\textbf{方法一：利用柯西积分公式}\\
+	\begin{eqnarray}
+        \oint_{\left|z+2\right|=1}{\frac{z}{z^2-4}}\mathrm{d}z&=&\oint_{\left| z+2 \right|=1}{\frac{z}{\left( z-2 \right) \left( z+2 \right)}\mathrm{d}z} \nonumber      \\
+        ~&=&\oint_{\left| z+2 \right|=1}{\frac{\frac{z}{z-2}}{z+2}\mathrm{d}z} \nonumber    \\
+        ~&=&2\pi\mathrm{i}\cdot\left.\frac{z}{z-2}\right|_{z=-2} \nonumber	  \\
+		~&=&2\pi\mathrm{i}\cdot \frac{-2}{-4} \nonumber  \\
+		~&=&\pi\mathrm{i} \nonumber
+	\end{eqnarray}
+	\hspace*{1em}\textbf{方法二：利用复合闭路定理}\\
+	\begin{eqnarray}
+        \oint_{\left|z+2\right|=1}{\frac{z}{z^2-4}}\mathrm{d}z&=&\oint_{\left| z+2 \right|=1}{\frac{z}{\left( z-2 \right) \left( z+2 \right)}\mathrm{d}z} \nonumber      \\
+        ~&=&\oint_{\left| z+2 \right|=1}{\frac{1}{2}\left( \frac{1}{z-2}+\frac{1}{z+2} \right) \mathrm{d}z} \nonumber    \\
+        ~&=&\frac{1}{2}\oint_{\left| z+2 \right|=1}{\frac{1}{z-2}\mathrm{d}z}+\frac{1}{2}\oint_{\left| z+2 \right|=1}{\frac{1}{z+2}\mathrm{d}z} \nonumber	  \\
+		~&=&0+\frac{1}{2}\times2\pi\mathrm{i} \nonumber  \\
+		~&=&\pi\mathrm{i} \nonumber
+	\end{eqnarray}
+\end{example}
+\textbf{解析函数的高阶导数公式}
+\begin{theorem}
+	$$
+	\oint_C{\frac{f\left( z \right)}{\left( z-z_0 \right) ^{n}}\mathrm{d}z}=2\pi \mathrm{i}\cdot \frac{f^{\left( n-1 \right)}\left( z_0 \right)}{\left(n-1\right)!}
+	$$
+\end{theorem}
+\begin{example}
+	$$
+	\oint_{\left|z\right|=3}{\frac{3z^2+2z-1}{\left(z-1\right)^3}\mathrm{d}z}=2\pi\mathrm{i}\cdot \frac{\left.\left(3z^2+2z-1\right)''\right|_{z=1}}{\left(3-1\right)!}=6\pi\mathrm{i}
+	$$
+\end{example}
+\section{解析函数与调和函数}
+\textbf{调和函数}\\
+如果二元实函数$\varphi \left( x,y \right)$在区域$D$内有二阶连续偏导数，并且满足拉普拉斯方程
+$$
+\frac{\partial ^2 \varphi}{\partial ^2 x}+\frac{\partial ^2 \varphi}{\partial ^2 y}=0
+$$
+则称$\varphi \left( x,y \right)$为区域$D$的调和函数\\
+
+\textbf{解析函数与调和函数的关系}
+\begin{theorem}
+	任何在区域$D$内解析的函数，它的实部与虚部均为区域$D$内的调和函数，且其虚部为实部的共轭调和函数；我们把使得$u+\mathrm{i}v$在区域$D$内构成解析函数的调和函数$v$称为$u$的共轭调和函数
+\end{theorem}
+
+\begin{example}
+	证明$u\left(x,y\right)=2\left(x-1\right)y$为调和函数，并求其共轭调和函数$v\left(x,y\right)$和由他们构成的解析函数$f\left(z\right)=u+\mathrm{i}v$\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}(1)\textbf{证明：}
+	$$
+	\frac{\partial u}{\partial x}=2y,
+	\frac{\partial u}{\partial y}=2x-2
+	$$
+	$$
+	\frac{\partial ^2 v}{\partial ^2 x}=0,
+	\frac{\partial ^2 v}{\partial ^2 y}=0
+	$$
+	\hspace*{2em}则
+	$$
+	\frac{\partial ^2 v}{\partial ^2 x}+\frac{\partial ^2 v}{\partial ^2 y}=0,
+	$$
+	\hspace*{2em}因此$u\left(x,y\right)=2\left(x-1\right)y$为调和函数
+	\newpage
+	(2)由于满足C-R方程，因此有
+	$$
+	\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}=2y
+	$$
+	\hspace*{2em}则
+	$$
+	v=y^2+g\left(x\right)
+	$$
+	\hspace*{2em}又由于
+	$$
+	\frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}=2-2x
+	$$
+	\hspace*{2em}且
+	$$
+	\frac{\partial v}{\partial x}=\left(y^2+g\left(x\right)\right)'_x=g'\left(x\right)
+	$$
+	\hspace*{2em}因此有
+	$$
+	g\left(x\right)=-x^2+2x+C
+	$$
+	\hspace*{2em}因此
+	$$
+	f\left(z\right)=2\left(x-1\right)y+\mathrm{i}\left(y^2-x^2+2x+C\right)
+	$$
+	\hspace*{2em}同时也可带入
+	$$
+	x=\frac{z+\overline{z}}{2},y=\frac{z-\overline{z}}{2\mathrm{i}}
+	$$
+	\hspace*{2em}得到
+	$$
+	f\left(z\right)=\mathrm{i}\left(-z^2+2z+C\right)
+	$$
+\end{example}
+
+\chapter{级数}
+\newpage
+\section{复数项级数与幂级数}
+\begin{definition}
+	若级数$\sum\limits_{n=1}^{\infty}{\left|\alpha_n\right|}$收敛,则复数项级数$\sum\limits_{n=1}^{\infty}{\alpha_n}$绝对收敛；若级数$\sum\limits_{n=1}^{\infty}{\alpha_n}$收敛，而$\sum\limits_{n=1}^{\infty}{\left|\alpha_n\right|}$发散，则复数项级数$\sum\limits_{n=1}^{\infty}{\alpha_n}$条件收敛\\
+\end{definition}
+\begin{theorem}
+	对幂级数$\sum\limits_{n=0}^{\infty}{c_nz^n}$\\
+	(1)若$\lim\limits_{n\to\infty}{\left|\frac{c_{n+1}}{c_n}\right|}=\lambda\neq0$，则收敛半径$R=\frac{1}{\lambda}$\\
+	(2)若$\lim\limits_{n\to\infty}{\sqrt[n]{\left|c_n\right|}}=\lambda\neq0$，则收敛半径$R=\frac{1}{\lambda}$
+\end{theorem}
+\textbf{收敛半径}
+$$
+R=\lim\limits_{n\to\infty}{\left|\frac{c_n}{c_{n+1}}\right|}
+$$
+\section{泰勒级数}
+\begin{theorem}
+	设函数$f\left(z\right)$在区域$D$内解析，$z_0$为区域$D$内一点，$d$为$z_0$到$D$的边界上各点的最短距离，则当$\left|z-z_0\right|\leqslant d$时，$f\left(z\right)$可以展开成幂级数，且其唯一
+	$$
+	f\left(z\right)=\sum_{n=0}^{\infty}{\frac{f^{(n)}\left(z_0\right)}{n!}\left(z-z_0\right)^n}
+	$$
+\end{theorem}
+\textbf{重要的泰勒展开式}
+$$
+\mathrm{e}^z=\sum_{n=0}^{\infty}\frac{z^n}{n!}=1+z+\frac{z^2}{2!}+\frac{z^3}{3!}+\cdots,R=+\infty
+$$
+$$
+\sin z = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}=z-\frac{z^3}{3!}+\frac{z^5}{5!}-\cdots,R=+\infty
+$$
+$$
+\cos z = \sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!}=1-\frac{z^2}{2!}+\frac{z^4}{4!}-\cdots,R=+\infty
+$$
+$$
+\ln\left(1+z\right)=\sum_{n=1}^{\infty}(-1)^{n-1}\frac{z^n}{n}=z-\frac{z^2}{2}+\frac{z^3}{3}-\cdots,\left|z\right|<1
+$$
+$$
+\frac{1}{1+z}=\sum_{n=0}^{\infty}(-1)^nz^n=1-z+z^2-\cdots,\left|z\right|<1
+$$
+$$
+\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n=1+z+z^2+\cdots,\left|z\right|<1
+$$
+
+\textbf{收敛半径的求法}\\
+对于收敛半径的求解，一般可利用上述求收敛半径的公式求解；若求函数在$z_0$处的泰勒展开式的收敛半径，则先找出该函数的奇点，求奇点与$z_0$的最小距离，该距离即为收敛半径
+\begin{example}
+	求
+	$$
+	f\left(z\right)=\frac{1}{1+z^2}
+	$$
+	\hspace*{2em}在$z=1$处的泰勒展开式的收敛半径\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}令$1+z^2=0$，得$z=\pm \mathrm{i}$，又$\left(0,\pm \mathrm{i}\right)$到$\left(-1,0\right)$距离为$\sqrt{2}$，因此收敛半径$R=\sqrt{2}$
+\end{example}
+\begin{example}
+	求级数
+	$$
+	\sum_{n=1}^{\infty}\left(-3\right)^nz^n
+	$$
+	\hspace*{2em}的收敛半径\\
+	\hspace*{1em}\textbf{解}
+	$$
+	R=\lim_{n\to \infty}\left|\frac{\left(-3\right)^n}{\left(-3\right)^{n+1}}\right|=\frac{1}{3}
+	$$
+\end{example}
+\section{敛散性的判断}
+\textbf{等比级数}
+$$
+\sum_{n=1}^{\infty}a_1q^{n-1}
+$$
+\hspace*{3em}当$\left|q\right|<1$时，收敛\\
+\hspace*{3em}当$\left|q\right|\geqslant1$时，发散\\
+
+\textbf{调和级数}
+$$
+\sum_{n=1}^{\infty}\frac{1}{n}
+$$
+\hspace*{3em}发散\\
+
+\textbf{$p$级数}
+$$
+\sum_{n=1}^{\infty}\frac{1}{n^p}
+$$
+\hspace*{3em}当$p\leqslant1$时，发散\\
+\hspace*{3em}当$p>1$时，收敛\\
+
+\begin{theorem}
+	若
+	$$
+	\sum_{n=1}^{\infty}u_n
+	$$
+	收敛，则
+	$$
+	\lim_{n\to\infty}u_n=0
+	$$
+\end{theorem}
+对于正项级数
+$$
+\sum_{n=1}^{\infty}u_n,\sum_{n=1}^{\infty}v_n
+$$
+有如下审敛法\\
+
+\textbf{比较审敛法}
+$$u_n\leqslant v_n$$
+\hspace*{3em}(1)$\sum\limits_{n=1}^{\infty}v_n$收敛$\Rightarrow\sum\limits_{n=1}^{\infty}u_n$收敛\\
+\hspace*{3em}(2)$\sum\limits_{n=1}^{\infty}u_n$发散$\Rightarrow\sum\limits_{n=1}^{\infty}v_n$发散\\
+\hspace*{3em}简言之：大收则小收，小发则大发\\
+
+\textbf{比较审敛法的极限形式}
+$$
+\lim_{n\to\infty}\frac{u_n}{v_n}=l
+$$
+\hspace*{3em}(1)若$0<l<+\infty$，则$\sum\limits_{n=1}^{\infty}u_n$，$\sum\limits_{n=1}^{\infty}v_n$同敛散\\
+\hspace*{3em}(2)若$l=0$，则$\sum\limits_{n=1}^{\infty}v_n$收敛$\Rightarrow\sum\limits_{n=1}^{\infty}n_n$收敛\\
+\hspace*{3em}(3)若$l=+\infty$，则$\sum\limits_{n=1}^{\infty}v_n$发散$\Rightarrow\sum\limits_{n=1}^{\infty}n_n$发散\\
+
+\textbf{比值审敛法}
+$$
+\lim_{n\to \infty}\frac{u_{n+1}}{u_n}=\rho
+$$
+\hspace*{3em}(1)若$0<\rho<1$，则级数收敛\\
+\hspace*{3em}(2)若$\rho>1$，则级数发散\\
+\hspace*{3em}(3)若$\rho=1$，则级数敛散性不确定\\
+
+\textbf{根值审敛法}
+$$
+\lim_{n\to\infty}\sqrt[n]{u_n}=\rho
+$$
+\hspace*{3em}(1)若$\rho<1$，则级数收敛\\
+\hspace*{3em}(2)若$\rho>1$，则级数发散\\
+\hspace*{3em}(3)若$\rho=1$，则级数敛散性不确定
+\newpage
+\textbf{交错级数敛散性的判别}
+$$
+\sum_{n=1}^{\infty}\left(-1\right)^{n-1}u_n
+$$
+若同时满足以下两个条件，则收敛
+$$
+\lim_{n\to \infty}u_n=0,u_n\geqslant u_{n+1}
+$$
+
+\textbf{拓展：}若用\textbf{比值}或\textbf{根值}审敛法判别，则当判定出$\sum\limits_{n=1}^{\infty}\left|u_n\right|$发散，则$\sum\limits_{n=1}^{\infty}u_n$发散
+
+\section{洛朗级数}
+\begin{example}
+	将函数
+	$$
+	f\left(z\right)=\frac{1}{z-2}
+	$$
+	\hspace*{2em}在解析区域$1<\left|z-1\right|<+\infty$内展开成洛朗级数\\
+	\hspace*{1em}\textbf{解}
+	$$
+	f\left(z\right)=\frac{1}{z-2}=\frac{1}{z-1-1}=\frac{1}{z-1}\cdot \frac{1}{1-\frac{1}{z-1}}
+	$$
+	\hspace*{2em}由于$1<\left|z-1\right|<+\infty$，则$\left|z-1\right|<1$，因此有
+	$$
+	f\left(z\right)=\frac{1}{z-1}\sum_{n=0}^{\infty}\left(\frac{1}{z-1}\right)^n=\sum_{n=1}^{\infty}\left(\frac{1}{z-1}\right)^n
+	$$
+\end{example}
+\begin{example}
+	将函数
+	$$
+	f\left(z\right)=\frac{1}{\left(z-1\right)\left(z-2\right)}
+	$$
+	\hspace*{2em}在解析区域\\
+	\hspace*{2em}(1) $\left|z\right|<1$\\
+	\hspace*{2em}(2) $1<\left|z\right|<2$\\
+	\hspace*{2em}(3) $2<\left|z\right|<+\infty$\\
+	\hspace*{2em}内展开成洛朗级数\\
+	\hspace*{1em}\textbf{解}
+	$$
+	f\left(z\right)=\frac{1}{z-2}-\frac{1}{z-1}=\frac{1}{1-z}-\frac{1}{2-z}
+	$$
+	\hspace*{2em}(1)在$\left|z\right|<1$内
+	$$
+	f\left(z\right)=\frac{1}{1-z}-\frac{1}{2}\frac{1}{1-\frac{z}{2}}=\sum_{n=0}^{\infty}z^n-\frac{1}{2}\sum_{n=0}^{\infty}\left(\frac{z}{2}\right)^n
+	$$
+	\newpage
+	(2)在$1<\left|z\right|<2$内，$\left|\frac{1}{z}\right|<1$，则
+	$$
+	\frac{1}{1-z}=-\frac{1}{z}\frac{1}{1-\frac{1}{z}}=-\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^n
+	$$
+	\hspace*{2em}且$\left|\frac{z}{2}\right|<1$，则
+	$$
+	\frac{1}{2-z}=\frac{1}{2}\frac{1}{1-\frac{z}{2}}=\frac{1}{2}\sum_{n=0}^{\infty}\left(\frac{z}{2}\right)^n
+	$$
+	\hspace*{2em}因此
+	$$
+	f\left(z\right)=-\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^n-\frac{1}{2}\sum_{n=0}^{\infty}\left(\frac{z}{2}\right)^n
+	$$
+	\hspace*{2em}(3)在$2<\left|z\right|<+\infty$内，$\left|\frac{1}{z}\right|<\frac{1}{z}<1$，$\left|\frac{2}{z}\right|<1$则
+	$$
+	\frac{1}{2-z}=-\frac{1}{z}\frac{1}{1-\frac{2}{z}}=-\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{2}{z}\right)^n
+	$$
+	\hspace*{2em}因此
+	$$
+	f\left(z\right)=-\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^n+\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{2}{z}\right)^n
+	$$
+\end{example}
+\begin{example}
+	将函数
+	$$
+	f\left(z\right)=\frac{1}{z\left(1-z\right)^2}
+	$$
+	\hspace*{2em}分别在圆环域\\
+	\hspace*{2em}(1) $0<\left|z\right|<1$ \\
+	\hspace*{2em}(2) $0<\left|z-1\right|<1$ \\
+	\hspace*{2em}内展开成洛朗级数\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}(1)在$0<\left|z\right|<1$内，有
+	$$
+	\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n
+	$$
+	\hspace*{2em}则
+	$$
+	\frac{1}{\left(1-z\right)^2}=\left(\frac{1}{1-z}\right)'=\left(\sum_{n=0}^{\infty}z^n\right)'=\sum_{n=1}^{\infty}nz^{n-1}
+	$$
+	\hspace*{2em}因此
+	$$
+	f\left(z\right)=\frac{1}{z}\sum_{n=1}^{\infty}nz^{n-1}=\sum_{n=1}^{\infty}nz^{n-2}
+	$$
+	\newpage
+	(2)在$0<\left|z-1\right|<1$内，
+	$$
+	\frac{1}{z}=\frac{1}{1+z-1}=\sum_{n=0}^{\infty}\left(-1\right)^n\left(z-1\right)^n
+	$$
+	\hspace*{2em}因此
+	$$
+	f\left(z\right)=\frac{1}{z}\cdot\frac{1}{\left(1-z\right)^2}=\sum_{n=0}^{\infty}\left(-1\right)^n\left(z-1\right)^{n-2}
+	$$
+\end{example}
+\textbf{结论}\\
+根据洛朗级数相关性质，有
+$$
+\oint_C{f\left(z\right)\mathrm{d}z}=2\pi\mathrm{i}c_{-1}
+$$
+\begin{example}
+	求
+	$$
+	\oint_{\left|z\right|=\frac{1}{2}}{\frac{1}{z\left(1-z\right)^2}\mathrm{d}z}
+	$$
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}函数
+	$$
+	f\left(z\right)=\frac{1}{z\left(1-z\right)^2}
+	$$
+	\hspace*{2em}在$0<\left|z\right|<1$内处处解析，且$\left|z\right|=\frac{1}{2}$在此圆环内，又由于
+	$$
+	f\left(z\right)=\frac{1}{z\left(1-z\right)^2}=\frac{1}{z}\left(\frac{1}{1-z}\right)'=\sum_{n=1}^{\infty}nz^{n-2}
+	$$
+	\hspace*{2em}因此
+	$$
+	\oint_{\left|z\right|=\frac{1}{2}}{\frac{1}{z\left(1-z\right)^2}\mathrm{d}z}=2\pi\mathrm{i}c_{-1}=2\pi\mathrm{i}
+	$$
+\end{example}
+
+\chapter{留数}
+\newpage
+\section{孤立奇点}
+如果函数$f\left(z\right)$在$z_0$处不解析，则$z_0$为$f\left(z\right)$的奇点
+\begin{definition}
+	如果函数$f\left(z\right)$在$z_0$处不解析，但在$z_0$的某个去心邻域$0<\left|z-z_0\right|<\delta$内处处解析，则$z_0$为$f\left(z\right)$的孤立奇点
+\end{definition}
+\begin{definition}
+	设$z_0$为$f\left(z\right)$的孤立奇点，在$z_0$的某个去心邻域$0<\left|z-z_0\right|<\delta$内，函数$f\left(z\right)$展开成洛朗级数
+	$$
+	f\left(z\right)=\sum_{n=-\infty}^{\infty}c_{n}\left(z-z_0\right)^n
+	$$
+	(1)展开式中不含$\left(z-z_0\right)$的负幂次项$\Rightarrow z_0$为可去奇点\\
+	(2)展开式中只有有限个$\left(z-z_0\right)$的负幂次项$\Rightarrow z_0$为极点，且若最高负幂次项次数为$-m$，则其为$m$级极点\\
+	(3)展开式中有无穷个$\left(z-z_0\right)$的负幂次项$\Rightarrow z_0$为本性奇点
+\end{definition}
+\textbf{引申}\\
+(1)$\lim\limits_{z\to z_0}{f\left(z\right)}$存在$\Rightarrow z_0$为可去奇点\\
+(2)$\lim\limits_{z\to z_0}{f\left(z\right)}=\infty \Rightarrow z_0$为极点\\
+(3)$\lim\limits_{z\to z_0}{f\left(z\right)}$不存在且不为$\infty \Rightarrow z_0$为本性奇点
+\begin{example}
+	求函数
+	$$
+	f\left(z\right)=\frac{z^3}{\left(z^2+1\right)\left(z+1\right)^2}
+	$$
+	\hspace*{2em}的极点，并指出是几级极点\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}$z=\pm\mathrm{i}$为一级极点，$z=-1$为二级极点
+\end{example}
+\textbf{说明}\\
+若解析函数$f\left(z\right)$在$z_0$的某邻域内满足
+$$
+f\left(z_0\right)=f'\left(z_0\right)=\cdots =f^{(m-1)}\left(z_0\right)=0,f^{(m)}\left(z_0\right)\neq0
+$$
+则$z_0$为$f\left(z\right)$的$m$级零点
+\newpage
+\begin{example}
+	求下列函数的极点，并指出是几级极点\\
+	\hspace*{2em}(1) $f\left(z\right)=\frac{\mathrm{e}^z-1}{z^2}$\\
+	\hspace*{2em}(2) $f\left(z\right)=\frac{1}{\sin z}$\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}(1)
+	$$
+	f\left(z\right)=\frac{\mathrm{e}^z-1}{z^2}=\frac{1}{z^2}\left(\sum_{n=0}^{\infty}\frac{z^n}{n!}-1\right)=\frac{1}{z^2}\left(z+\frac{z^2}{2!}+\frac{z^3}{3!}+\cdots\right)=\frac{1}{z}+\frac{1}{2!}+\frac{z}{3!}+\cdots
+	$$
+	\hspace*{2em}因此$z=0$为$f\left(z\right)$的一级极点\\
+	\hspace*{1em}\textbf{另解}\\
+	\hspace*{2em}由于对于分母$z=0$为$z^2$的二级零点，对于分子$z=0$为$\mathrm{e^z-1}$的一级零点，这是由于
+	$$
+	\left.\left(\mathrm{e}^z-1\right)\right|_{z=0}=0,\left.\left(\mathrm{e}^z-1\right)'\right|_{z=0}=1
+	$$
+	\hspace*{2em}因此$z=0$为$f\left(z\right)$的一级极点（$2-1=1$）\\
+	\hspace*{2em}(2)由于
+	$$
+	\sin\left(k\pi\right)=0,\left.\left[\sin\left(z\right)\right]'\right|_{k\pi}=\cos \left(k\pi\right)=\left(-1\right)^k\neq 0
+	$$
+	\hspace*{2em}因此$z=k\pi$为$\sin z$的一级零点，即$z=k\pi$为$f\left(z\right)=\frac{1}{\sin z}$的一级极点
+\end{example}
+\textbf{结论}\\
+	\hspace*{2em}对于某函数$f\left(z\right)$，在$z_0$处，其为分子的$a$级零点，分母的$b$级零点，且$a<b$，则$z_0$为$f\left(z\right)$的$b-a$级极点\\
+	\hspace*{2em}在计算几级极点时，需要将分子分母都因式分解，约去公因式，计算$z_0$为分子、分母的几级零点\\
+	\hspace*{2em}计算某函数某一点为其几级零点时，首先因式分解到最简为几个整式相乘的形式，计算$z_0$为各部分的几级零点，最后相加得$z_0$为该函数的几级零点
+\begin{example}
+	求函数
+	$$
+	f\left(z\right)=\frac{z-\sin z}{z^6}
+	$$
+	\hspace*{2em}的极点，并指出是几级极点\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}对于分子，令$p\left(z\right)=z-\sin z$，
+	$$
+	p\left(0\right)=0,p'\left(0\right)=0,p''\left(0\right)=0,p'''\left(0\right)=1
+	$$
+	\hspace*{2em}显然$z=0$为$p\left(z\right)$的三级零点，又$z=0$为$z^6$的六级极点\\
+	\hspace*{2em}因此$z=0$为$f\left(z\right)$的三级极点\\
+\end{example}
+
+\section{留数概念与计算}
+$f\left(z\right)$在$z_0$处的留数为
+$$
+\mathrm{Res}\left[f\left(z\right),z_0\right],\mathrm{Res}\left[f\left(z_0\right)\right]
+$$
+$$
+\mathrm{Res}\left[f\left(z\right),z_0\right]=\frac{1}{2\pi\mathrm{i}}\oint_C{f\left(z\right)\mathrm{d}z}=c_{-1}
+$$
+(1)若$z_0$为可去奇点，则
+$$
+\mathrm{Res}\left[f\left(z\right),z_0\right]=c_{-1}=0
+$$
+(2)若$z_0$为本性奇点，则展开洛朗级数，取$c_{-1}$\\
+(3)若$z_0$为极点，有以下规则：\\
+\hspace*{2em}\textbf{规则1：}若$z_0$为一级极点，则
+$$
+\mathrm{Res}\left[f\left(z\right),z_0\right]=\lim_{z\to z_0}{\left(z-z_0\right)f\left(z\right)}
+$$
+\hspace*{2em}\textbf{规则2：}若$z_0$为$m$级极点，则
+$$
+\mathrm{Res}\left[f\left(z\right),z_0\right]=\frac{1}{\left(m-1\right)!}\lim_{z\to z_0}\frac{\mathrm{d}^{m-1}}{\mathrm{d}z^{m-1}}\left[\left(z-z_0\right)^m f\left(z\right)\right]
+$$
+\hspace*{2em}\textbf{规则3：}设
+$$
+f\left(z\right)=\frac{P\left(z\right)}{Q\left(z\right)}
+$$
+$P\left(z\right)$与$Q\left(z\right)$在$z_0$解析，如果$P\left(z_0\right)\neq 0$，$Q\left(z_0\right)=0$，$Q'\left(z_0\right)\neq 0$，则$z_0$为$f\left(z\right)$的一级极点，且
+$$
+\mathrm{Res}\left[f\left(z\right),z_0\right]=\frac{P\left(z_0\right)}{Q'\left(z_0\right)}
+$$
+
+\textbf{拓展：}若极点$z_0$的级数不为$m$，当它的实际级数要比$m$低时，把$m$作为极点$z_0$的级数来计算留数，并不会影响计算结果
+\begin{example}
+    \begin{eqnarray}
+        \mathrm{Res}\left[\frac{z-\sin z}{z^6},0\right]&=&\frac{1}{\left(6-1\right)!}\lim_{z\to 0}{\frac{\mathrm{d^5}}{\mathrm{d}z^5}\left(z^6\cdot\frac{z-\sin z}{z^6}\right)} \nonumber      \\
+        ~&=&\frac{1}{5!}\lim_{z\to 0}\left(-\cos \right) \nonumber    \\
+		~&=&-\frac{1}{5!} \nonumber
+    \end{eqnarray}
+\end{example}
+\textbf{函数在无穷远点的留数}\\
+\hspace*{2em}\textbf{规则4：}
+$$
+\mathrm{Res}\left[f\left(z\right),\infty\right]=-\mathrm{Res}\left[f\left(\frac{1}{z}\right)\cdot\frac{1}{z^2},0\right]
+$$
+\newpage
+\section{留数定理及其应用}
+\begin{theorem}
+	设$f\left(z\right)$在以简单闭曲线$C$为边界的闭区域$\overline{D}=D+C$内除$z_1$，$z_2$，$z_3$，$\cdots$，$z_n$外解析，其中$z_1$，$z_2$，$z_3$，$\cdots$，$z_n$为$f\left(z\right)$在$D$内的孤立奇点，则
+	$$
+	\oint_C{f\left(z\right)\mathrm{d}z}=2\pi\mathrm{i}\cdot\sum_{k=1}^{n}{\mathrm{Res}\left[f\left(z\right),z_k\right]}
+	$$
+\end{theorem}
+\begin{theorem}
+	如果函数$f\left(z\right)$在扩充复平面内只有有限个孤立奇点：$z_1$，$z_2$，$z_3$，$\cdots$，$z_n$，$\infty$，则$\left(z\right)$在各奇点的留数总和为零，即
+	$$
+	\sum_{k=1}^{n}{\mathrm{Res}\left[f\left(z\right),z_k\right]}+\mathrm{Res}\left[f\left(z\right),\infty\right]=0
+	$$
+\end{theorem}
+\textbf{留数定理的应用}\\
+(1)计算沿封闭曲线的积分（重点）
+\begin{example}
+	计算积分
+	$$
+	\oint_C{\frac{z\mathrm{e}^z}{z^2-1}\mathrm{d}z}
+	$$
+	\hspace*{2em}其中$C$为正向圆周$\left|z\right|=2$\\
+	\hspace*{1em}\textbf{解}\\
+	\hspace*{2em}
+	$$
+	f\left(z\right)=\frac{z\mathrm{e}^z}{z^2-1}
+	$$
+	\hspace*{2em}在圆$\left|z\right|=2$内有两个一级极点，为$z=\pm \mathrm{1}$且有
+	$$
+	\mathrm{Res}\left[f\left(z\right),1\right]=\frac{\mathrm{e}}{2},\mathrm{Res}\left[f\left(z\right),-1\right]=\frac{\mathrm{e}^{-1}}{2}
+	$$
+	\hspace*{2em}因此
+	$$
+	\oint_C{\frac{z\mathrm{e}^z}{z^2-1}\mathrm{d}z}=2\pi\mathrm{i}\left[\mathrm{Res}\left[f\left(z\right),1\right]+\mathrm{Res}\left[f\left(z\right),-1\right]\right]=2\pi\mathrm{i}\left(\frac{\mathrm{e}}{2}+\frac{\mathrm{e}^{-1}}{2}\right)=\pi\mathrm{i}\left(\mathrm{e}+\frac{1}{\mathrm{e}}\right)
+	$$
+\end{example}
+\newpage
+
+\noindent
+(2)在定积分计算中的应用（几乎不考）\\
+\hspace*{2em}\textbf{[A]}形如
+$$
+\int_0^{2\pi}R\left(\cos \theta,\sin \theta\right)\mathrm{d}\theta
+$$
+\hspace*{3em}的积分，利用$z=\mathrm{e}^{\mathrm{i}\theta}$，$0\leqslant\theta\leqslant 2\pi$，做代换
+$$
+\left\{ \begin{array}{l}
+	\sin \theta =\frac{z^2-1}{2\mathrm{i}z}\\
+	\cos \theta =\frac{z^2+1}{2z}\\
+\end{array} \right. 
+$$
+\hspace*{3em}从而化为
+$$
+\oint_{\left|z\right|=1}{R\left(\frac{z^2+1}{2z},\frac{z^2-1}{2\mathrm{i}z}\right)}\frac{\mathrm{d}z}{\mathrm{i}z}=\oint_{\left|z\right|=1}f\left(z\right)\mathrm{d}z
+$$
+\hspace*{3em}再依据$\left|z\right|=1$中的孤立奇点，通过留数定理计算\\
+\hspace*{2em}\textbf{[B]}形如
+$$
+\int_{-\infty}^{+\infty}R\left(x\right)\mathrm{d}x=\int_{-\infty}^{+\infty}\frac{P\left(x\right)}{Q\left(x\right)}\mathrm{d}x
+$$
+\hspace*{3em}的积分，且满足\\
+\hspace*{3em}(1) $P\left(x\right)$与$Q\left(x\right)$为互质多项式\\
+\hspace*{3em}(2)分母次数至少比分子次数高两次\\
+\hspace*{3em}(3) $Q\left(x\right)$在实轴上没有零点\\
+\hspace*{3em}我们记$R\left(z\right)=\frac{P\left(z\right)}{Q\left(z\right)}$，设其在上半平面内的所有极点为$z_1$，$z_2$，$\cdots$，$z_k$，则
+$$
+\int_{-\infty}^{+\infty}R\left(x\right)\mathrm{d}x=2\pi\mathrm{i}\sum_{k}\mathrm{Res}\left[R\left(z\right),z_k\right]
+$$
+\hspace*{2em}\textbf{[C]}形如
+$$
+\int_{-\infty}^{+\infty}R\left(x\right)\cdot\mathrm{e}^{\mathrm{i}\alpha x}\mathrm{d}x=\int_{-\infty}^{+\infty}\frac{P\left(x\right)}{Q\left(x\right)}\cdot\mathrm{e}^{\mathrm{i}\alpha x}\mathrm{d}x,\alpha>0
+$$
+\hspace*{3em}的积分，且满足\\
+\hspace*{3em}(1) $R\left(x\right)$为互质多项式\\
+\hspace*{3em}(2)分母次数至少比分子次数高一次\\
+\hspace*{3em}(3) $R\left(x\right)$在实轴上没有零点\\
+\hspace*{3em}我们记$R\left(z\right)=\frac{P\left(z\right)}{Q\left(z\right)}$，设其在上半平面内的所有极点为$z_1$，$z_2$，$\cdots$，$z_k$，则
+$$
+\int_{-\infty}^{+\infty}R\left(x\right)\cdot\mathrm{e}^{\mathrm{i}\alpha x}\mathrm{d}x=2\pi\mathrm{i}\sum_{k}\mathrm{Res}\left[R\left(z\right)\cdot\mathrm{e}^{\mathrm{i}\alpha z},z_k\right]
+$$
+\end{document}
