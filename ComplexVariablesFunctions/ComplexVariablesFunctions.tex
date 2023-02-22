@@ -395,7 +395,7 @@ $$
 \end{example}
 
 \begin{example}
-	计算$\oint_C z\mathrm{d}z$，其中$C$为从原点到$3+4\mathrm{i}$的直线段\\
+	计算$\int_C z\mathrm{d}z$，其中$C$为从原点到$3+4\mathrm{i}$的直线段\\
 	\hspace*{1em}\textbf{解}\\
     \hspace*{2em}得参数方程
 	$$
@@ -409,7 +409,7 @@ $$
 	$$
 	\hspace*{2em}则
     \begin{eqnarray}
-        \oint_C z\mathrm{d}z&=&\int_0^3\left(x+\frac{4}{3}x\mathrm{i}\right)\mathrm{d}\left(x+\frac{4}{3}x\mathrm{i}\right) \nonumber      \\
+        \int_C z\mathrm{d}z&=&\int_0^3\left(x+\frac{4}{3}x\mathrm{i}\right)\mathrm{d}\left(x+\frac{4}{3}x\mathrm{i}\right) \nonumber      \\
         ~&=&\int_0^3\left(1+\frac{4}{3}\mathrm{i}\right)^2x\mathrm{d}x \nonumber    \\
         ~&=&\frac{9}{2}\times \left(1+\frac{4}{3}\mathrm{i}\right)^2 \nonumber		\\
 		~&=&-\frac{7}{2}+12\mathrm{i} \nonumber
@@ -521,7 +521,7 @@ $$
 \textbf{调和函数}\\
 如果二元实函数$\varphi \left( x,y \right)$在区域$D$内有二阶连续偏导数，并且满足拉普拉斯方程
 $$
-\frac{\partial ^2 \varphi}{\partial ^2 x}+\frac{\partial ^2 \varphi}{\partial ^2 y}=0
+\frac{\partial ^2 \varphi}{\partial x^2}+\frac{\partial ^2 \varphi}{\partial y^2}=0
 $$
 则称$\varphi \left( x,y \right)$为区域$D$的调和函数\\
 
@@ -539,12 +539,12 @@ $$
 	\frac{\partial u}{\partial y}=2x-2
 	$$
 	$$
-	\frac{\partial ^2 v}{\partial ^2 x}=0,
-	\frac{\partial ^2 v}{\partial ^2 y}=0
+	\frac{\partial ^2 v}{\partial x^2}=0,
+	\frac{\partial ^2 v}{\partial y^2}=0
 	$$
 	\hspace*{2em}则
 	$$
-	\frac{\partial ^2 v}{\partial ^2 x}+\frac{\partial ^2 v}{\partial ^2 y}=0,
+	\frac{\partial ^2 \varphi}{\partial x^2}+\frac{\partial ^2 \varphi}{\partial y^2}=0
 	$$
 	\hspace*{2em}因此$u\left(x,y\right)=2\left(x-1\right)y$为调和函数
 	\newpage
@@ -633,7 +633,7 @@ $$
 	$$
 	\hspace*{2em}在$z=1$处的泰勒展开式的收敛半径\\
 	\hspace*{1em}\textbf{解}\\
-	\hspace*{2em}令$1+z^2=0$，得$z=\pm \mathrm{i}$，又$\left(0,\pm \mathrm{i}\right)$到$\left(-1,0\right)$距离为$\sqrt{2}$，因此收敛半径$R=\sqrt{2}$
+	\hspace*{2em}令$1+z^2=0$，得$z=\pm \mathrm{i}$，又$\left(0,\pm \mathrm{i}\right)$到$\left(1,0\right)$距离为$\sqrt{2}$，因此收敛半径$R=\sqrt{2}$
 \end{example}
 \begin{example}
 	求级数
@@ -694,8 +694,8 @@ $$
 \lim_{n\to\infty}\frac{u_n}{v_n}=l
 $$
 \hspace*{3em}(1)若$0<l<+\infty$，则$\sum\limits_{n=1}^{\infty}u_n$，$\sum\limits_{n=1}^{\infty}v_n$同敛散\\
-\hspace*{3em}(2)若$l=0$，则$\sum\limits_{n=1}^{\infty}v_n$收敛$\Rightarrow\sum\limits_{n=1}^{\infty}n_n$收敛\\
-\hspace*{3em}(3)若$l=+\infty$，则$\sum\limits_{n=1}^{\infty}v_n$发散$\Rightarrow\sum\limits_{n=1}^{\infty}n_n$发散\\
+\hspace*{3em}(2)若$l=0$，则$\sum\limits_{n=1}^{\infty}v_n$收敛$\Rightarrow\sum\limits_{n=1}^{\infty}u_n$收敛\\
+\hspace*{3em}(3)若$l=+\infty$，则$\sum\limits_{n=1}^{\infty}v_n$发散$\Rightarrow\sum\limits_{n=1}^{\infty}u_n$发散\\
 
 \textbf{比值审敛法}
 $$
@@ -771,7 +771,7 @@ $$
 	$$
 	f\left(z\right)=-\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^n-\frac{1}{2}\sum_{n=0}^{\infty}\left(\frac{z}{2}\right)^n
 	$$
-	\hspace*{2em}(3)在$2<\left|z\right|<+\infty$内，$\left|\frac{1}{z}\right|<\frac{1}{z}<1$，$\left|\frac{2}{z}\right|<1$则
+	\hspace*{2em}(3)在$2<\left|z\right|<+\infty$内，$\left|\frac{1}{z}\right|<1$，$\left|\frac{2}{z}\right|<1$则
 	$$
 	\frac{1}{2-z}=-\frac{1}{z}\frac{1}{1-\frac{2}{z}}=-\frac{1}{z}\sum_{n=0}^{\infty}\left(\frac{2}{z}\right)^n
 	$$
